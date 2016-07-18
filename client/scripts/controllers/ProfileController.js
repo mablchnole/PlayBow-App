@@ -37,15 +37,15 @@ angular.module('myApp').controller('ProfileController', [
         $rootScope.playmateProfile = response.data;
         console.log('YES! Newest playmate:', $rootScope.playmateProfile);
         // find matches for this profile
-        for(var i=0; i < $rootScope.allPlaymates.length; i++) {
-          console.log('inside for loop, all plcess playstyle', $rootScope.allPlaymates[i].playstyles[0]);
-          if($rootScope.playmateProfile[0].playstyles[0] === $rootScope.allPlaymates[i].playstyles[0]) {
-            $rootScope.playmateMatches.push($rootScope.allPlaymates[i]);
-            console.log('array of playmate matches', $rootScope.playmateMatches);
-          } else {
-            console.log("We're sorry. There are no matches at this time!");
-          }
-        } // end for loop
+        // for(var i=0; i < $rootScope.allPlaymates.length; i++) {
+        //   console.log('inside for loop, all plcess playstyle', $rootScope.allPlaymates[i].playstyles[0]);
+        //   if($rootScope.playmateProfile[0].playstyles[0] === $rootScope.allPlaymates[i].playstyles[0]) {
+        //     $rootScope.playmateMatches.push($rootScope.allPlaymates[i]);
+        //     console.log('array of playmate matches', $rootScope.playmateMatches);
+        //   } else {
+        //     console.log("We're sorry. There are no matches at this time!");
+        //   }
+        // } // end for loop
 
       }, function myError (response) {
         console.log(response.statusText);

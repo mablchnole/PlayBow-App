@@ -25,8 +25,8 @@ router.post('/addPlaymate', function (req, res){
     if(err){
       console.log(err);
     } else {
-      var sendPlaymate = client.query('INSERT INTO playmates (name, breed, age, gender, sterile, vaccinated, location, size, playstyles) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
-        [req.body.name, req.body.breed, req.body.age, req.body.gender, req.body.sterile, req.body.vaccinated, req.body.location, req.body.size, req.body.playstyles]);
+      var sendPlaymate = client.query('INSERT INTO playmates (email, name, breed, age, city, bio, gender, sterile, vaccinated, location, size, playstyles) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)',
+        [req.body.email, req.body.name, req.body.breed, req.body.age, req.body.city, req.body.bio, req.body.gender, req.body.sterile, req.body.vaccinated, req.body.location, req.body.size, req.body.playstyles]);
       sendPlaymate.on('end', function(){
         return res.end();
       });
@@ -65,8 +65,8 @@ router.post('/addFave', function (req, res){
     if(err){
       console.log(err);
     } else {
-      var sendFave = client.query('INSERT INTO favorites (name, breed, age, gender, sterile, vaccinated, location) VALUES ($1, $2, $3, $4, $5, $6, $7)',
-        [req.body.name, req.body.breed, req.body.age, req.body.gender, req.body.sterile, req.body.vaccinated, req.body.location]);
+      var sendFave = client.query('INSERT INTO favorites (email, name, breed, age, gender, sterile, vaccinated, location, size, bio, playstyles, city) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)',
+        [req.body.email, req.body.name, req.body.breed, req.body.age, req.body.gender, req.body.sterile, req.body.vaccinated, req.body.location, req.body.size, req.body.bio, req.body.playstyles, req.body.city]);
 
       sendFave.on('end', function(){
         return res.end();

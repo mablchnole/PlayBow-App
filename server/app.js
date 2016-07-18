@@ -28,7 +28,7 @@ app.get('/', function(req, res){
 });
 
 // set up server
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 1234);
 
 app.listen(app.get('port'), function() {
   console.log('human, are you awake:', app.get('port'));

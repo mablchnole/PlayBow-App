@@ -1,3 +1,185 @@
-.img-square {
-  width: 10%;
+.thumbnail {
+  border: none;
+  padding: 0;
+}
+
+.thumbnail .caption {
+    padding: 0px 20px 20px 20px;
+    color: #053E59;
+}
+
+.caption h3 {
+  font-weight: bold;
+  color: #053E59;
+}
+
+.list-group-item {
+  border: none;
+  padding: 4px 0;
+  font-size: 14px;
+  color: #848484;
+}
+
+.list-group-item span {
+  color: #eee;
+}
+
+.allplaymates {
+  background-color: #012635;
+}
+
+.ribbon {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  background-color: #ED4C80;
+  padding: 8px 10px;
+  z-index: 99;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.fa {
+  color: #ED4C80;
+  font-size: 24px;
+}
+
+.fa {
+  color: #ED4C80;
+  font-size: 24px;
+}
+
+.action-icons {
+  text-align: center;
+}
+
+.header-banner {
+}
+
+.header-banner h1, h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FCF1DD;
+  margin: 30px 0;
+}
+
+
+.filter {
+  margin: 15px 0 25px 0;
+  width: 80%;
+}
+
+.one-profile {
+}
+
+/*** HEADER ***/
+.header {
+  background-color: #053E59;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 17px
+}
+
+header[role="banner"] {
+  #logo-main {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+#navbar-primary.navbar-default {
+  background-color: #FCF1DD;
+  border: none;
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+      display: inline-block;
+      float: none;
+      > a {
+        padding-left: 30px;
+        padding-right: 30px;
+        }
+    }
+  }
+}
+
+.navbar-default .navbar-nav>li>a {
+  text-align: center;
+  color: #13334c;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  background-color: #1abc9c;
+  color: #FCF1DD
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin: 0;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+/*** JUMBOTRON ***/
+.hometron {
+  position: relative;
+  background: #012635 url("/images/jumbotron-home.jpg") center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  padding: 10% 0;
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: normal;
+  margin-bottom: 20px;
+
+}
+
+.jumbotron p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/*** BUTTONS ***/
+button {
+    background-color: #1abc9c;
+    border: none;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 16px;
+    color: #FCF1DD;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+  background-color: #053E59;
+  color: #FCF1DD;
+}
+
+/*** ADD PLAYMATE BACKGROUND ***/
+.addplaymate {
+  background: #012635 url("/images/container-addplaymate.jpg") center center;
 }

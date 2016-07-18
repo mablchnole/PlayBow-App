@@ -9,7 +9,7 @@ angular.module('myApp').controller('PlaymateController', [
 
     $rootScope.allPlaymates = [];
     $rootScope.favePlaymates = [];
-    $scope.playstyles = [];
+    $rootScope.playstyles = [];
 
     // simple substring filter
     $scope.customArrayFilter = function(item) {
@@ -42,9 +42,12 @@ angular.module('myApp').controller('PlaymateController', [
 
         // collect user input to send to database
         var playmateToSend = {
+          email: $scope.emailIn,
           name: $scope.nameIn,
           breed: $scope.breedIn,
           age: $scope.ageIn,
+          city: $scope.cityIn,
+          bio: $scope.bioIn,
           gender: $scope.genderIn,
           sterile: $scope.sterileIn,
           vaccinated: $scope.vaccinatedIn,
@@ -64,22 +67,22 @@ angular.module('myApp').controller('PlaymateController', [
 
         // function to bind list of checkbox options and push to one array
         $scope.add = function(value) {
-          if (!angular.isArray($scope.playstyles)) {
-            $scope.playstyles = [];
+          if (!angular.isArray($rootScope.playstyles)) {
+            $rootScope.playstyles = [];
           }
-          if (-1 === $scope.playstyles.indexOf(value)) {
-            $scope.playstyles.push(value);
-            console.log('checkbox function array:', $scope.playstyles);
+          if (-1 === $rootScope.playstyles.indexOf(value)) {
+            $rootScope.playstyles.push(value);
+            console.log('checkbox function array:', $rootScope.playstyles);
           }
         }; // end add function
         // not currently using this but may want to in the future
         $scope.remove = function(value) {
-          if (!angular.isArray($scope.playstyles)) {
+          if (!angular.isArray($rootScope.playstyles)) {
             return;
           }
-          var index = $scope.playstyles.indexOf(value);
+          var index = $rootScope.playstyles.indexOf(value);
           if (-1 !== index) {
-            $scope.playstyles.splice(index, 1);
+            $rootScope.playstyles.splice(index, 1);
           }
         }; // end remove function
         console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
@@ -97,13 +100,18 @@ angular.module('myApp').controller('PlaymateController', [
     $scope.addFave = function(index){
       console.log('addFave button clicked');
       var faveToSend = {
+        email: $rootScope.allPlaymates[index].email,
         name: $rootScope.allPlaymates[index].name,
         breed: $rootScope.allPlaymates[index].breed,
         age: $rootScope.allPlaymates[index].age,
+        city: $rootScope.allPlaymates[index].cityIn,
+        bio: $rootScope.allPlaymates[index].bio,
         gender: $rootScope.allPlaymates[index].gender,
         sterile: $rootScope.allPlaymates[index].sterile,
         vaccinated: $rootScope.allPlaymates[index].vaccinated,
-        location: $scope.allPlaymates[index].location
+        location: $rootScope.allPlaymates[index].location,
+        size: $rootScope.allPlaymates[index].sizeIn,
+        playstyles: $rootScope.allPlaymates[index].playstyles
       };
       console.log('sending fave to server:', faveToSend);
       // post method to send fave to server
