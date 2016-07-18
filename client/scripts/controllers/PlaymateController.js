@@ -155,7 +155,7 @@ angular.module('myApp').controller('PlaymateController', [
         url: '/getFaves'
       }).success(function(response) {
         $rootScope.favePlaymates = response.data;
-        console.log('all the favorites back from server', $rootScope.favePlaymates);
+        console.log('all the favorites back from server', response.data);
       }, function myError (response) {
         console.log(response.statusText);
       });

@@ -51,6 +51,7 @@ router.get('/getPlaymates', function(req, res) {
     if(err) {
       console.log(err);
     }
+    done();
   }); // end pg connect
 }); // end getPlaymates route
 
@@ -92,6 +93,7 @@ router.get('/getFaves', function(req, res) {
     if(err) {
       console.log(err);
     }
+    done();
   }); // end pg connect
 }); // end getFaves route
 
