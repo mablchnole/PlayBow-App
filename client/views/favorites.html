@@ -1,6 +1,41 @@
-<h1>favorites</h1>
+<div class="container-fluid allplaymates">
+  <div class="container">
+    <div class="header-banner" ng-repeat="profile in playmateProfile">
+      <h1>{{ profile.name }}'s Favorites</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4" ng-repeat="fave in favePlaymates">
+        <div class="thumbnail">
+          <span class="ribbon">{{ fave.playstyles[0] }}</span>
+          <img ng-src="{{ fave.location }}">
+          <div class="caption">
+            <h3>{{ fave.name }}</h3>
+            <ul class="list-group">
+              <li class="list-group-item">{{ fave.city }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ fave.gender }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ playmate.age }} Years</li>
+              <li class="list-group-item">{{ fave.size }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ fave.breed }}</li>
+            </ul>
+            <hr>
+            <ul class="list-group">
+              <li class="list-group-item">Spayed/Neutered: {{ fave.sterile }}</li>
+              <li class="list-group-item">Vaccinated: {{ fave.vaccinated }}</li>
+            </ul>
+            <hr>
+            <p>{{ fave.bio }}</p>
+            <hr>
+            <div class="action-icons">
+              <a class="btn fa" ng-click="schedulePlaydate($index)" ng-href="{{mailLink}}" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+              <a class="btn fa" ng-click="removeFave(fave.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div ng-repeat="fave in favePlaymates">
+
+
+<!-- <div ng-repeat="fave in favePlaymates">
   <div class="playmate-profile">
     <img class="img-square img-responsive" ng-src="{{ fave.location }}">
   </div>
@@ -16,4 +51,4 @@
     {{ fave.playstyles }}
     <a class="btn fa" ng-click="removeFave(fave.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
   </p>
-</div>
+</div> -->

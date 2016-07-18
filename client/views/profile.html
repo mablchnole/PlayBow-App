@@ -1,6 +1,41 @@
+<div class="container-fluid allplaymates" ng-repeat="profile in playmateProfile">
+  <div class="container">
+    <div class="header-banner">
+      <h1>{{ profile.name }}'s Profile</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <span class="ribbon">{{ profile.playstyles[0] }}</span>
+          <img ng-src="{{ profile.location }}">
+          <div class="caption">
+            <h3>{{ profile.name }}</h3>
+            <ul class="list-group">
+              <li class="list-group-item">{{ profile.city }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ profile.gender }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ playmate.age }} Years</li>
+              <li class="list-group-item">{{ profile.size }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ profile.breed }}</li>
+            </ul>
+            <hr>
+            <ul class="list-group">
+              <li class="list-group-item">Spayed/Neutered: {{ profile.sterile }}</li>
+              <li class="list-group-item">Vaccinated: {{ profile.vaccinated }}</li>
+            </ul>
+            <hr>
+            <p>{{ profile.bio }}</p>
+            <hr>
+            <div class="action-icons">
+              <a href="#allplaymates"><button class="btn" type="button" name="button">View All Playmates</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<div ng-repeat="profile in playmateProfile">
+
+
+<!-- <div ng-repeat="profile in playmateProfile">
   <h1> {{ profile.name }} </h1>
   <div class="playmate-profile">
     <img class="img-square img-responsive" ng-src="{{ profile.location }}">
@@ -18,4 +53,4 @@
   <a href="#matches"><button class="btn" type="button" name="button">Find Matching Playmates</button></a>
   <a href="#allplaymates"><button class="btn" type="button" name="button">View All Playmates</button></a>
 
-</div>
+</div> -->

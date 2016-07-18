@@ -106,13 +106,13 @@ angular.module('myApp').controller('PlaymateController', [
         name: $rootScope.allPlaymates[index].name,
         breed: $rootScope.allPlaymates[index].breed,
         age: $rootScope.allPlaymates[index].age,
-        city: $rootScope.allPlaymates[index].cityIn,
+        city: $rootScope.allPlaymates[index].city,
         bio: $rootScope.allPlaymates[index].bio,
         gender: $rootScope.allPlaymates[index].gender,
         sterile: $rootScope.allPlaymates[index].sterile,
         vaccinated: $rootScope.allPlaymates[index].vaccinated,
         location: $rootScope.allPlaymates[index].location,
-        size: $rootScope.allPlaymates[index].sizeIn,
+        size: $rootScope.allPlaymates[index].size,
         playstyles: $rootScope.allPlaymates[index].playstyles
       };
       console.log('sending fave to server:', faveToSend);
@@ -170,12 +170,13 @@ angular.module('myApp').controller('PlaymateController', [
         url: '/getNewest'
       }).then(function(response) {
         $rootScope.playmateProfile = response.data;
-        console.log('YES! Newest playmate:', $rootScope.playmateProfile);
+        console.log('YES! Newest playmate:', response.data);
       }, function myError (response) {
         console.log(response.statusText);
       });
     }; // end displayProfile
 
+    $scope.displayProfile();
 
     // schedule playdate via mailto email
     $scope.schedulePlaydate = function(index) {
@@ -184,7 +185,7 @@ angular.module('myApp').controller('PlaymateController', [
       $scope.mailLink = "mailto:" + $rootScope.allPlaymates[index].email + "?subject=" + $scope.Subject + '&body=' + $scope.bodyText;
 
     };
-  
+
 
     ////////////////////////////////////////////////////////////
     //                    DELETE METHOD                      //

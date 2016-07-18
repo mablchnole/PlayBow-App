@@ -65,13 +65,19 @@
 .header-banner {
 }
 
-.header-banner h1, h3 {
+.header-banner h1 {
   font-weight: bold;
   text-transform: uppercase;
   color: #FCF1DD;
   margin: 30px 0;
 }
 
+.create-profile {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FCF1DD;
+  margin: 30px 0;
+}
 
 .filter {
   margin: 15px 0 25px 0;

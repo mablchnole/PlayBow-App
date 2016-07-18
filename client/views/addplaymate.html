@@ -1,19 +1,23 @@
 <div class="top-content">
   <div class="inner-bg">
     <div class="container-fluid addplaymate">
+      <div class="container">
       <div class="row">
-        <div class="col-xs-6">
+
           <div class="form-box">
         		<div class="form-top">
           		<div class="form-top-left">
                 <div class="header-banner">
-        			     <h3>Create a playmate profile</h3>
+        			     <h3 class="create-profile">Create a playmate profile</h3>
                 </div>
           		</div>
             </div>
+
+
             <div class="form-bottom">
 
               <form role="form" name="form">
+          <div class="col-xs-6">
                 <div class="form-group">
                   <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
                     <button class="btn">Select a profile picture</button>
@@ -51,7 +55,8 @@
                   <label class="sr-only" for="bio">Bio</label>
                   <textarea name="bio" class="form-control" ng-model="bioIn" placeholder="Bio"></textarea>
                 </div>
-
+        </div>
+        <div class="col-xs-6">
                 <div class="form-group">
                   <label for="gender">Gender:</label>
                   <select id="gender" ng-model="genderIn">
@@ -134,12 +139,13 @@
                     </li>
                   </ul>
                 </div>
+            </div>
               </form>
               <div>
                 <button class="btn" type="submit" ng-click="submit(value)">Save</button>
               </div>
-            </div>
-          </div>
+
+          </div> 
         </div>
       </div>
     </div>
