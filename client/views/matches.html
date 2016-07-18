@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="jumbotron" ng-repeat="profile in playmateProfile">
+    <h1>Playmate Matches for {{ profile.name }}</h1>
+  </div>
+
+  <div ng-repeat="matches in playmateMatches">
+    <ul>
+      <li class="playmate-profile"><img class="img-square img-responsive" ng-src="{{ matches.location }}"></li>
+    </ul>
+    <p>
+      {{ matches.name }},
+      {{ matches.breed }},
+      {{ matches.age }},
+      {{ matches.gender }},
+      {{ matches.sterile }},
+      {{ matches.vaccinated }}
+      {{ matches.size }}
+      {{ matches.bio }}
+      {{ matches.playstyles }}
+    </p>
+
+
+  </div>
+  <a href="#allplaymates"><button class="btn" type="button" name="button">View All Playmates</button></a>
+
+
+</div>

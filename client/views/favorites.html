@@ -1,0 +1,19 @@
+<h1>favorites</h1>
+
+<div ng-repeat="fave in favePlaymates">
+  <div class="playmate-profile">
+    <img class="img-square img-responsive" ng-src="{{ fave.location }}">
+  </div>
+  <p>
+    {{ fave.name }},
+    {{ fave.breed }},
+    {{ fave.age }},
+    {{ fave.gender }},
+    {{ fave.sterile }},
+    {{ fave.vaccinated }}
+    {{ fave.size }}
+    {{ fave.bio }}
+    {{ fave.playstyles }}
+    <a class="btn fa" ng-click="removeFave(fave.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+  </p>
+</div>

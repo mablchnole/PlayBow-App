@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Add a playmate</h1>
+  </div>
+
+  <form role="form" name="form">
+    <div class="form-group">
+      <label>Upload a profile picture:</label>
+      <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
+        <button class="btn">Select Picture</button>
+        <span class="fileSelect"> {{file.$ngfName}} </span>
+        <img ngf-thumbnail="file || '/images/upload.svg'">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" ng-model="nameIn" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label>Breed:</label>
+      <input type="text" class="form-control" ng-model="breedIn" placeholder="Breed">
+    </div>
+    <div class="form-group">
+      <label>Age:</label>
+      <input type="text" class="form-control" ng-model="ageIn" placeholder="Age">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" ng-model="genderIn">
+        <option value="female">female</option>
+        <option value="male">male</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="size">Size (lbs):</label>
+      <select id="size" ng-model="sizeIn">
+        <option value="XS: less than 10 lbs">XS (>10)</option>
+        <option value="Small: 10-25 lbs">S (10-25)</option>
+        <option value="Medium: 20-50 lbs">M (20-50)</option>
+        <option value="Large: 50-75 lbs">L (50-75)</option>
+        <option value="XL: 75-90 lbs">XL (75-90)</option>
+        <option value="XXL: 90+ lbs">XXL: (90+)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <li class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="sterileIn" value="yes"> Neutered or Spayed
+        </label>
+      </li>
+    </div>
+    <div class="form-group">
+      <li class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="vaccinatedIn" value="yes"> Vaccinated
+        </label>
+      </li>
+    </div>
+
+    <div mt-to="playstyles">
+      <label>Playstyles (Choose up to 3):</label>
+      <ul>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Cheerleader'" />Cheerleaders
+          </label>
+        </li>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Body Slammer'" />Body Slammers
+          </label>
+        </li>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Wrestlers'" />Wrestlers
+          </label>
+        </li>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Chasers'" />Chasers
+          </label>
+        </li>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Tuggers'" />Tuggers
+          </label>
+        </li>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Soft Touchers'" />Soft Touchers
+          </label>
+        </li>
+        <li class="checkbox">
+          <label>
+            <input type="checkbox" mt-checkbox="'Adaptive'" />Adaptive
+          </label>
+        </li>
+      </ul>
+    </div>
+
+  </form>
+  <div>
+    <button class="btn" type="submit" ng-click="submit(value)">Save</button>
+  </div>
+</div>

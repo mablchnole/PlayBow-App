@@ -1,0 +1,26 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-checkboxes": "^1.0.2",
+    "aws-sdk": "^2.4.6",
+    "body-parser": "^1.15.2",
+    "checklist-model": "^0.10.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "lodash": "^4.13.1",
+    "multer": "^1.1.0",
+    "multer-s3": "^2.3.2",
+    "ng-file-upload": "^12.0.4",
+    "path": "^0.12.7",
+    "pg": "^6.0.2"
+  }
+}

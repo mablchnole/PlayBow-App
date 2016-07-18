@@ -1,0 +1,21 @@
+
+
+<div ng-repeat="profile in playmateProfile">
+  <h1> {{ profile.name }} </h1>
+  <div class="playmate-profile">
+    <img class="img-square img-responsive" ng-src="{{ profile.location }}">
+  </div>
+  <p>
+    {{ profile.breed }},
+    {{ profile.age }},
+    {{ profile.gender }},
+    {{ profile.sterile }},
+    {{ profile.vaccinated }}
+    {{ profile.size }}
+    {{ profile.bio }}
+    {{ profile.playstyles }}
+  </p>
+  <a href="#matches"><button class="btn" type="button" name="button">Find Matching Playmates</button></a>
+  <a href="#allplaymates"><button class="btn" type="button" name="button">View All Playmates</button></a>
+
+</div>
