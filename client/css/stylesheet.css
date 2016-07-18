@@ -1,6 +1,12 @@
 .fileSelect {
   color: #fff;
   font-size: 13px;
+  opacity: .60;
+}
+
+p .small {
+  margin: 10px 0;
+  font-style: italic;
 }
 
 .thumbnail {
@@ -85,7 +91,10 @@
   text-align: center;
 }
 
-.one-profile {
+.profile-form-right {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px
 }
 
 /*** HEADER ***/
@@ -193,5 +202,5 @@ button:hover {
 
 /*** ADD PLAYMATE BACKGROUND ***/
 .addplaymate {
-  background: #012635 url("/images/container-addplaymate.jpg") center center;
+  background: #012635 url("/images/container-addplaymate.jpg") no-repeat center center;
 }

@@ -63,7 +63,7 @@ angular.module('myApp').controller('PlaymateController', [
           method: 'POST',
           url: '/addPlaymate',
           data: playmateToSend
-        }).then(function() {
+        }).success(function() {
           $scope.displayPlaymates();
         });
 
@@ -121,7 +121,7 @@ angular.module('myApp').controller('PlaymateController', [
         method: 'POST',
         url: '/addFave',
         data: faveToSend
-      }).then(function() {
+      }).success(function() {
         $scope.displayFaves();
       }); // end post route
     }; // end addFave
@@ -153,7 +153,7 @@ angular.module('myApp').controller('PlaymateController', [
       $http({
         method: 'GET',
         url: '/getFaves'
-      }).then(function(response) {
+      }).success(function(response) {
         $rootScope.favePlaymates = response.data;
         console.log('all the favorites back from server', $rootScope.favePlaymates);
       }, function myError (response) {
