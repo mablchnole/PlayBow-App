@@ -7,9 +7,11 @@ angular.module('myApp').controller('PlaymateController', [
   'Upload',
   function($scope, $rootScope, $http, $window, $location, Upload, $filter) {
 
+    $rootScope.playmateProfile = [];
     $rootScope.allPlaymates = [];
     $rootScope.favePlaymates = [];
     $rootScope.playstyles = [];
+    $rootScope.playmateMatches = [];
 
     // simple substring filter
     $scope.customArrayFilter = function(item) {
@@ -160,6 +162,29 @@ angular.module('myApp').controller('PlaymateController', [
     }; // end displayPlaymates
 
     $scope.displayFaves();
+
+    // get method to retrieve newest playmate created from server
+    $scope.displayProfile = function() {
+      $http({
+        method: 'GET',
+        url: '/getNewest'
+      }).then(function(response) {
+        $rootScope.playmateProfile = response.data;
+        console.log('YES! Newest playmate:', $rootScope.playmateProfile);
+      }, function myError (response) {
+        console.log(response.statusText);
+      });
+    }; // end displayProfile
+
+
+    // schedule playdate via mailto email
+    $scope.schedulePlaydate = function(index) {
+      $scope.Subject = "PlayBow - Playdate Request";
+      $scope.bodyText = "Hi" + " " + $rootScope.allPlaymates[index].name + "! We found you on PlayBow and would like to schedule a playdate. Please let us know if you're interested. From: " + $rootScope.playmateProfile[0].name + ".";
+      $scope.mailLink = "mailto:" + $rootScope.allPlaymates[index].email + "?subject=" + $scope.Subject + '&body=' + $scope.bodyText;
+
+    };
+  
 
     ////////////////////////////////////////////////////////////
     //                    DELETE METHOD                      //

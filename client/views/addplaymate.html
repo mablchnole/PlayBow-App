@@ -17,7 +17,7 @@
                 <div class="form-group">
                   <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
                     <button class="btn">Select a profile picture</button>
-                    <span class="fileSelect"> {{file.$ngfName}} </span>
+                    <span class="fileSelect">File: {{file.$ngfName}} </span>
                     <!-- <img ngf-thumbnail="file || '/images/upload.svg'"> -->
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="sr-only" for="gender">Gender:</label>
+                  <label for="gender">Gender:</label>
                   <select id="gender" ng-model="genderIn">
                     <option value="Female">female</option>
                     <option value="Male">male</option>
@@ -99,6 +99,7 @@
                     <li class="checkbox">
                       <label>
                         <input type="checkbox" mt-checkbox="'Cheerleader'" />Cheerleader
+                        <span class="">test</span>
                       </label>
                     </li>
                     <li class="checkbox">

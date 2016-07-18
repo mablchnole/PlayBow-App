@@ -19,11 +19,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
     }).
     when('/profile', {
       templateUrl: '/views/profile.html',
-      controller: 'ProfileController'
+      controller: 'PlaymateController'
     }).
     when('/matches', {
       templateUrl: '/views/matches.html',
-      controller: 'ProfileController'
+      controller: 'PlaymateController'
     }).
     when('/favorites', {
       templateUrl: '/views/favorites.html',

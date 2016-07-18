@@ -1,22 +1,35 @@
-<div class="container">
-  <div class="jumbotron">
-    <h1>Playmates</h1>
+<div class="container-fluid allplaymates">
+  <div class="container">
+    <div class="header-banner">
+      <h1>All Playmates</h1>
+      <label class="filter"><input class="filter form control" type="text" ng-model="simpleFilter" placeholder="Search by Keyword"/></label><br />
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4" ng-repeat="playmate in allPlaymates | filter: simpleFilter">
+        <div class="thumbnail">
+          <span class="ribbon">{{ playmate.playstyles[0] }}</span>
+          <img ng-src="{{ playmate.location }}">
+          <div class="caption">
+            <h3>{{ playmate.name }}</h3>
+            <ul class="list-group">
+              <li class="list-group-item">{{ playmate.city }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ playmate.gender }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ playmate.age }} Years</li>
+              <li class="list-group-item">{{ playmate.size }} <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> {{ playmate.breed }}</li>
+            </ul>
+            <hr>
+            <ul class="list-group">
+              <li class="list-group-item">Spayed/Neutered: {{ playmate.sterile }}</li>
+              <li class="list-group-item">Vaccinated: {{ playmate.vaccinated }}</li>
+            </ul>
+            <hr>
+            <p>{{ playmate.bio }}</p>
+            <hr>
+            <div class="action-icons">
+              <a class="btn fa" ng-click="schedulePlaydate($index)" ng-href="{{mailLink}}" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+              <a class="btn fa" ng-click="addFave($index)"><i id="like" ng-class="{'fa fa-heart': liked, 'fa fa-heart-o': !liked}" ng-click="liked=!liked"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <label>Filter: <input type="text" ng-model="simpleFilter" /></label><br />
-
-  <ul ng-repeat="playmate in allPlaymates | filter: simpleFilter">
-    <li class="playmate-profile"><img class="img-square img-responsive" ng-src="{{ playmate.location }}"></li>
-    <li>{{ playmate.name }}</li>
-    <li>{{ playmate.breed }}</li>
-    <li>{{ playmate.age }}</li>
-    <li>{{ playmate.gender }}</li>
-    <li>{{ playmate.sterile }}</li>
-    <li>{{ playmate.vaccinated }}</li></li>
-    <li>{{ playmate.size }}</li>
-    <li>{{ playmate.bio }}</li>
-    <li>{{ playmate.playstyles }}</li>
-    <li><button type="button" ng-click="addFave($index)">Add to Faves</button></li>
-    <li><button type="button" ng-click="schedulePlaydate($index)">Schedule Playdate</button></li>
-  </ul>
 </div>

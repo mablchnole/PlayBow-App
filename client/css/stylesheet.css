@@ -1,3 +1,8 @@
+.fileSelect {
+  color: #fff;
+  font-size: 13px;
+}
+
 .thumbnail {
   border: none;
   padding: 0;
@@ -70,7 +75,8 @@
 
 .filter {
   margin: 15px 0 25px 0;
-  width: 80%;
+  width: 100%;
+  text-align: center;
 }
 
 .one-profile {
