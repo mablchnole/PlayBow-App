@@ -4,7 +4,7 @@
       <h1>{{ profile.name }}'s Favorites</h1>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-4" ng-repeat="fave in favePlaymates" ng-init="displayFaves()">
+      <div class="col-sm-6 col-md-4" ng-repeat="fave in favePlaymates" data-ng-init="displayFaves()">
         <div class="thumbnail">
           <span class="ribbon">{{ fave.playstyles[0] }}</span>
           <img ng-src="{{ fave.location }}">
