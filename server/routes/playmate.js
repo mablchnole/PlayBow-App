@@ -109,7 +109,6 @@ router.delete('/removeFave', function (req, res){
       res.sendStatus(200);
     }
     done();
-    console.log('back from database delete route');
   });
 }); // end removeFave
 
@@ -137,10 +136,6 @@ router.post('/uploads', upload.single('file'), function(req, res) {
   console.log('in post uploads:', req.file);
   res.send(req.file);
 });
-
-// get uploads
-
-
 
 
 module.exports = router;

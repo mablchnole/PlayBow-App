@@ -26,6 +26,7 @@ router.get('/getPlaymatesToFilter', function(req, res) {
     if(err) {
       console.log(err);
     }
+    done();
   }); // end pg connect
 }); // end getProfile route
 
@@ -44,6 +45,7 @@ router.get('/getNewest', function(req, res) {
     if(err) {
       console.log(err);
     }
+    done();
   }); // end pg connect
 }); // end getProfile route
 

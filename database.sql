@@ -12,7 +12,9 @@ CREATE TABLE playmates (
   size VARCHAR(100),
   bio VARCHAR(1000),
   playstyles TEXT[],
-	created TIMESTAMP DEFAULT current_timestamp
+	created TIMESTAMP DEFAULT current_timestamp,
+  city VARCHAR(100),
+  email VARCHAR(100)
 );
 
 CREATE TABLE favorites (
@@ -27,5 +29,7 @@ CREATE TABLE favorites (
   size VARCHAR(100),
   bio VARCHAR(1000),
   playstyles TEXT[],
-	created TIMESTAMP DEFAULT current_timestamp
+	created TIMESTAMP DEFAULT current_timestamp,
+  city VARCHAR(100),
+  email VARCHAR(100)
 );

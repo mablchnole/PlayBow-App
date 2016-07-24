@@ -139,7 +139,7 @@ angular.module('myApp').controller('PlaymateController', [
         url: '/getPlaymates'
       }).then(function(response) {
         $rootScope.allPlaymates = response.data;
-        console.log('all the playmates back from server', $rootScope.allPlaymates);
+        console.log('all the playmates back from server', response.data);
       }, function myError (response) {
         console.log(response.statusText);
       });
@@ -149,17 +149,17 @@ angular.module('myApp').controller('PlaymateController', [
 
     // retrieve just the faves from server to display
     $scope.displayFaves = function() {
-      // get method to retrieve faves
+      // retrieve data from server
       $http({
         method: 'GET',
         url: '/getFaves'
-      }).success(function(response) {
+      }).then(function(response) {
         $rootScope.favePlaymates = response.data;
-        console.log('all the favorites back from server', response.data);
+        console.log('all the faves back from server', response.data);
       }, function myError (response) {
         console.log(response.statusText);
       });
-    }; // end displayPlaymates
+    }; // end displayFaves
 
     $scope.displayFaves();
 
