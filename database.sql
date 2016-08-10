@@ -1,4 +1,4 @@
-Database: PlayBow
+--Database: PlayBow
 
 CREATE TABLE playmates (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -33,3 +33,18 @@ CREATE TABLE favorites (
   city VARCHAR(100),
   email VARCHAR(100)
 );
+
+INSERT INTO playmates [ { id: 114,
+    name: 'Toshi',
+    breed: 'Shiba',
+    age: '1',
+    gender: 'Male',
+    sterile: 'Yes',
+    vaccinated: 'Yes',
+    location: 'https://prime-digital-academy-playbow.s3.amazonaws.com/1468860313897',
+    size: 'Small: 10-25 lbs',
+    bio: 'I love to chase others and be chased too. I\'m high energy and very vocal! I\'d love to meet new friends.',
+    playstyles: [ 'Chaser' ],
+    created: Mon Jul 18 2016 11:45:14 GMT-0500 (CDT),
+    city: 'Minneapolis',
+    email: 'playbowdate@gmail.com' } ]
